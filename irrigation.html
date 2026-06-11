@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Irrigation Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="calculator-box">
+
+<h1>💧 Irrigation Calculator</h1>
+
+<p>
+Estimate water requirements for your field.
+</p>
+
+<a href="index.html">
+    <button>🏠 Back to Home</button>
+</a>
+
+<br><br>
+
+<input type="number"
+id="fieldArea"
+placeholder="Field Area (Acres)">
+
+<br><br>
+
+<input type="number"
+id="waterPerAcre"
+placeholder="Water Needed Per Acre (Liters)">
+
+<br><br>
+
+<button onclick="calculateWater()">
+Calculate
+</button>
+
+<br><br>
+
+<div class="info-box">
+
+<h3>Water Requirement</h3>
+
+<p id="waterResult">
+Result will appear here
+</p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

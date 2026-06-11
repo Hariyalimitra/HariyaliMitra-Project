@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="calculator-box">
+
+    <h1>🔐 Login</h1>
+
+    <input
+type="email"
+id="email"
+placeholder="Enter Email Address">
+    
+
+    <br><br>
+
+    <button onclick="generateOTP()">
+        Generate OTP
+    </button>
+
+    <br><br>
+
+    <p id="otpDisplay"></p>
+
+    <input
+    type="text"
+    id="userOTP"
+    placeholder="Enter OTP">
+
+    <br><br>
+
+    <button onclick="verifyOTP()">
+        Verify OTP
+    </button>
+
+    <br><br>
+
+    <p id="loginResult"></p>
+
+    <br>
+
+    <a href="index.html">
+        <button>🏠 Back to Home</button>
+    </a>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="calculator-box">
+
+<h1 id="welcomeText">🌱 Welcome</h1>
+
+<p>You are successfully logged in.</p>
+<p id="emailText"></p>
+<a href="index.html">
+<button>🏠 Home</button>
+</a>
+<br><br>
+
+<button onclick="logoutUser()">
+🚪 Logout
+</button>
+</div>
+<script>
+ if (!localStorage.getItem("fullname")) {
+
+    window.location.href = "login.html";
+
+}   
+
+let fullname =
+localStorage.getItem("fullname");
+let email =
+localStorage.getItem("email");
+
+document.getElementById("welcomeText").innerText =
+"🌱 Welcome " + fullname;
+document.getElementById("emailText").innerText =
+"📧 " + email;
+function logoutUser() {
+
+    localStorage.removeItem("fullname");
+    localStorage.removeItem("email");
+
+    window.location.href = "login.html";
+
+}
+
+</script>
+</body>
+
+</html>

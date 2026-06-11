@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Crop Yield Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="calculator-box">
+
+<h1>🌾 Crop Yield Calculator</h1>
+<p>
+<p>
+Estimate crop production, income and profit with ease
+</p>
+
+<a href="index.html">
+    <button>🏠 Back to Home</button>
+</a>
+
+<br><br>
+
+<input type="number"
+id="acre"
+placeholder="Enter Acres">
+
+<br><br>
+
+<input type="number"
+id="yield"
+placeholder="Yield Per Acre">
+<br><br>
+
+<input type="number"
+id="price"
+placeholder="Price Per Quintal">
+<br><br>
+
+<input type="number"
+id="cost"
+placeholder="Total Farming Cost">
+<br><br>
+
+<button onclick="calculateYield()">
+Calculate
+</button>
+
+<br><br>
+
+<div class="info-box">
+
+<h3>Total Yield</h3>
+
+<p id="result">
+Result will appear here
+</p>
+<p id="incomeResult">
+Income will appear here
+</p>
+<p id="profitResult">
+Profit will appear here
+</p>
+</div>
+<script src="script.js"></script>
+
+</body>
+
+</html>

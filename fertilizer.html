@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fertilizer Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="calculator-box">
+
+<h1>🧪 Fertilizer Calculator</h1>
+
+<p>
+Estimate fertilizer requirements for your field.
+</p>
+
+<a href="index.html">
+    <button>🏠 Back to Home</button>
+</a>
+
+<br><br>
+
+<input type="number"
+id="fertArea"
+placeholder="Field Area (Acres)">
+
+<br><br>
+
+<input type="number"
+id="fertPerAcre"
+placeholder="Fertilizer Needed Per Acre (Kg)">
+
+<br><br>
+
+<button onclick="calculateFertilizer()">
+Calculate
+</button>
+
+<br><br>
+
+<div class="info-box">
+
+<h3>Fertilizer Requirement</h3>
+
+<p id="fertResult">
+Result will appear here
+</p>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
