@@ -6,7 +6,9 @@ const app = express();
 
 let generatedOTP = "";
 const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
         user: "thekaransrivastav7842@gmail.com",
         pass: "utrh gxsj zuiy odeu"
