@@ -65,26 +65,25 @@ app.get("/send-otp", async (req, res) => {
 
     const email = req.query.email;
     console.log(email);
-
+    console.log("OTP route hit");
     generatedOTP =
     Math.floor(1000 + Math.random() * 9000).toString();
 
     try {
 
         await transporter.sendMail({
-
             from: "thekaransrivastav7842@gmail.com",
-            to: email,
+   to: email,
             subject: "HariyaliMitra OTP",
             text: "Your OTP is: " + generatedOTP
 
         });
-
+       console.log("MAIL SENT SUCCESS");
         res.send("OTP Sent");
 
     } catch (error) {
 
-        console.log(error);
+        console.log("MAIL FAILED", error);
         res.send("OTP Failed");
 
     }
