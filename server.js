@@ -159,7 +159,8 @@ if (existingUser.length > 0) {
 
 });
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
 
-    console.log("HariyaliMitra Running on Port 3000");
+app.listen(PORT, () => {
+    console.log(`HariyaliMitra Running on Port ${PORT}`);
 });
