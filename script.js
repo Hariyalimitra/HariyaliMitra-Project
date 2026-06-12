@@ -160,21 +160,31 @@ function toggleDarkMode(){
 ```
 document.body.classList.toggle("dark-mode");
 ```
-
+const supabase = window.supabase.createClient(
+    "https://zhpidsbrvqgpdhiieiwo.supabase.co",
+    "sb_publishable_UtrrZAp6B2lF3DScbL8mzg_3vWRcWgs"
+);
 }
 async function generateOTP() {
 
     let email =
     document.getElementById("email").value;
 
-    let response =
-    await fetch("/send-otp?email=" + email);
+    const { error } = await supabase.auth.signInWithOtp({
+        email: email
+    });
 
-    let result =
-    await response.text();
+    if (error) {
 
-    document.getElementById("otpDisplay").innerText =
-    result;
+        document.getElementById("otpDisplay").innerText =
+        "❌ OTP Failed";
+
+    } else {
+
+        document.getElementById("otpDisplay").innerText =
+        "✅ OTP Sent";
+
+    }
 
 }
 
