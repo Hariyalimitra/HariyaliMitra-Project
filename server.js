@@ -58,6 +58,8 @@ app.get("/test-email", async (req, res) => {
 
 app.get("/send-otp", async (req, res) => {
     const email = req.query.email;
+    console.log("EMAIL_USER:", process.env.EMAIL_USER);
+    console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "SET" : "NOT SET");
     console.log("OTP route hit for:", email);
 
     generatedOTP = Math.floor(1000 + Math.random() * 9000).toString();
