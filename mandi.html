@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandi Price Checker - HariyaliMitra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>HariyaliMitra</h2>
+
+        <a href="index.html">Home</a>
+        <a href="index.html#crops">Crops</a>
+        <a href="index.html#flowers">Flowers</a>
+        <a href="index.html#weather">Weather</a>
+        <a href="knowledge.html">Knowledge Center</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="irrigation.html">Irrigation</a>
+        <a href="fertilizer.html">Fertilizer</a>
+        <a href="weather.html">Weather Tool</a>
+        <a href="mandi.html">Mandi Prices</a>
+        <a href="tools.html">Farmer Tools</a>
+        <a href="contact.html">Contact</a>
+        <button id="langBtn">🌐 Hindi</button>
+        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </nav>
+
+    <h2 class="logo">🌾 Mandi Price Checker</h2>
+
+    <p>Aaj ke mandi rates dekhe — crop ka sahi daam pata karein</p>
+
+    <div class="calculator-box">
+
+        <h1>🏪 Today's Mandi Rates</h1>
+
+        <label for="stateSelect"><b>State Choose Karein:</b></label><br><br>
+
+        <select id="stateSelect" onchange="loadMandiPrices()">
+            <option value="bihar">Bihar</option>
+            <option value="up">Uttar Pradesh</option>
+            <option value="punjab">Punjab</option>
+            <option value="mp">Madhya Pradesh</option>
+            <option value="haryana">Haryana</option>
+        </select>
+
+        <br><br>
+
+        <p id="mandiUpdated" style="font-size:14px; color:gray;"></p>
+
+        <div id="mandiTableContainer">
+            <!-- Table will be inserted here by JS -->
+        </div>
+
+        <br>
+
+        <p style="font-size:14px; color:gray;">
+            ℹ️ Prices are per Quintal (100 kg). Demo data shown — live rates coming soon!
+        </p>
+
+    </div>
+
+    <footer>
+
+        <h3>🌱 HariyaliMitra</h3>
+
+        <p>Your Crop, Your Partner, Your Success</p>
+
+        <p>
+            <a href="knowledge.html">Knowledge Center</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="login.html">Login</a>
+        </p>
+        <p>📧 support@hariyalimitra.com</p>
+        <p>📱 +91 9876543210</p>
+        <p>© 2026 HariyaliMitra</p>
+
+    </footer>
+
+    <a href="#">
+        <button class="top-btn">⬆ Back to Top</button>
+    </a>
+
+    <script src="script.js"></script>
+    <script src="mandi.js"></script>
+
+</body>
+</html>
