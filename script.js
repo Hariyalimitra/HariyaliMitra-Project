@@ -110,7 +110,7 @@ async function verifyOTP() {
     const { data, error } = await supabaseClient.auth.verifyOtp({
         email: email,
         token: otp,
-        type: 'email'
+        type: 'magiclink'
     });
 
     if (error) {
