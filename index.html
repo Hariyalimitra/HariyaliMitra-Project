@@ -207,21 +207,27 @@ placeholder="Search crops or flowers">
 
     </section>
 
-    <section id="weather" class="weather">
+   <section id="weather" class="weather">
 
         <h2 id="weatherHeading">Today's Weather</h2>
 
         <div class="weather-card">
 
-    <h2>📍 Bihar</h2>
+    <h2 id="homeWeatherLocation">📍 Loading...</h2>
 
-    <h3>38°C</h3>
+    <h3 id="homeWeatherTemp">--°C</h3>
 
-    <p>☀️ Sunny</p>
+    <p id="homeWeatherDesc">Loading...</p>
 
-    <p>💧 Humidity: 65%</p>
+    <p id="homeWeatherHumidity">💧 Humidity: --%</p>
 
-    <p>🌬️ Wind: 12 km/h</p>
+    <p id="homeWeatherWind">🌬️ Wind: -- km/h</p>
+
+    <br>
+
+    <a href="weather.html">
+        <button>📅 View 10-Day Forecast</button>
+    </a>
 
 </div>
 
@@ -824,6 +830,28 @@ placeholder="Enter Phone Number">
 </a>
 <script src="script.js"></script>
 ...
+<script src="weather-live.js"></script>
+<script>
+    // Homepage live weather (separate from weather.html)
+    if (typeof DEFAULT_LAT !== 'undefined') {
+        let homeLat = DEFAULT_LAT;
+        let homeLon = DEFAULT_LON;
+
+        fetch("https://api.open-meteo.com/v1/forecast?latitude=" + homeLat + "&longitude=" + homeLon + "&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto")
+            .then(res => res.json())
+            .then(data => {
+                let current = data.current;
+                let [icon, desc] = weatherCodeToInfo(current.weather_code);
+
+                document.getElementById("homeWeatherLocation").innerText = "📍 " + DEFAULT_LOCATION_NAME;
+                document.getElementById("homeWeatherTemp").innerText = current.temperature_2m + "°C";
+                document.getElementById("homeWeatherDesc").innerText = icon + " " + desc;
+                document.getElementById("homeWeatherHumidity").innerText = "💧 Humidity: " + current.relative_humidity_2m + "%";
+                document.getElementById("homeWeatherWind").innerText = "🌬️ Wind: " + current.wind_speed_10m + " km/h";
+            })
+            .catch(err => console.log("Home weather error:", err));
+    }
+</script>
 
 <script>
 
