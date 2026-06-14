@@ -529,9 +529,32 @@ textarea{
     }
 
     nav{
-        flex-direction:column;
-        gap:10px;
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        justify-content:flex-start;
+        gap:12px;
         padding:10px;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    nav a{
+        font-size:14px;
+        white-space:nowrap;
+        flex-shrink:0;
+    }
+
+    #langBtn, 
+    nav button{
+        flex-shrink:0;
+        white-space:nowrap;
+        font-size:12px;
+        padding:8px 12px;
+    }
+
+    #guestButtons,
+    #userButtons{
+        flex-shrink:0;
+        white-space:nowrap;
     }
 
     nav a{
