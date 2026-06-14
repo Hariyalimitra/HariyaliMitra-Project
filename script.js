@@ -154,7 +154,7 @@ async function registerUser() {
 
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-    recognition.lang = 'hi-IN';
+    recognition.lang = 'en-IN';
     recognition.interimResults = false;
 
     recognition.onstart = function () {
