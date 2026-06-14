@@ -90,11 +90,12 @@ async function generateOTP() {
         alert("Please enter email");
         return;
     }
-
-    const { error } = await supabaseClient.auth.signInWithOtp({
-        email: email
-    });
-
+const { error } = await supabaseClient.auth.signInWithOtp({
+    email: email,
+    options: {
+        shouldCreateUser: true
+    }
+});
     if (error) {
         document.getElementById("otpDisplay").innerText = "❌ OTP Failed: " + error.message;
     } else {
@@ -105,18 +106,21 @@ async function generateOTP() {
 async function verifyOTP() {
     let email = document.getElementById("email").value;
     let otp = document.getElementById("userOTP").value;
- 
-    let otpResponse = await fetch("/verify-otp?otp=" + otp);
-    let otpResult = await otpResponse.text();
- 
-    if (otpResult !== "SUCCESS") {
+
+    const { data, error } = await supabaseClient.auth.verifyOtp({
+        email: email,
+        token: otp,
+        type: 'email'
+    });
+
+    if (error) {
         document.getElementById("loginResult").innerText = "❌ Invalid OTP";
         return;
     }
- 
+
     let userResponse = await fetch("/check-user?email=" + email);
     let userResult = await userResponse.json();
- 
+
     if (userResult.status === "FOUND") {
         localStorage.setItem("fullname", userResult.fullname);
         localStorage.setItem("email", userResult.email);
