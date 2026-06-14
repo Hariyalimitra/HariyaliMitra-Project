@@ -91,7 +91,7 @@ async function generateOTP() {
         return;
     }
 
-    const { error } = await supabase.auth.signInWithOtp({
+    const { error } = await supabaseClient.auth.signInWithOtp({
         email: email
     });
 
