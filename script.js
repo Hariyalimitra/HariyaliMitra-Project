@@ -163,6 +163,7 @@ async function registerUser() {
 
     recognition.onresult = function (event) {
         let transcript = event.results[0][0].transcript;
+        transcript = transcript.toLowerCase().trim();
         document.getElementById("searchInput").value = transcript;
         document.getElementById("voiceBtn").innerText = "🎤";
         searchCrop();
