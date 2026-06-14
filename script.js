@@ -160,6 +160,8 @@ function startVoiceSearch() {
     const recognition = new SpeechRecognition();
     recognition.lang = 'en-IN';
     recognition.interimResults = false;
+    recognition.continuous = false;
+    recognition.maxAlternatives = 1;
 
     recognition.onstart = function () {
         document.getElementById("voiceBtn").innerText = "🎙️ Listening...";
