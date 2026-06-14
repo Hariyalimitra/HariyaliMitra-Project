@@ -90,12 +90,15 @@ async function generateOTP() {
         alert("Please enter email");
         return;
     }
-    let response = await fetch("/send-otp?email=" + email);
-    let result = await response.text();
-    if (result === "OTP Sent") {
-        document.getElementById("otpDisplay").innerText = "✅ OTP Sent to your email!";
+
+    const { error } = await supabase.auth.signInWithOtp({
+        email: email
+    });
+
+    if (error) {
+        document.getElementById("otpDisplay").innerText = "❌ OTP Failed: " + error.message;
     } else {
-        document.getElementById("otpDisplay").innerText = "❌ OTP Failed. Check email.";
+        document.getElementById("otpDisplay").innerText = "✅ OTP Sent to your email!";
     }
 }
  
