@@ -13,11 +13,7 @@
 
 <h1>🌦️ Weather Information</h1>
 
-<p>
-Live weather integration coming soon.
-</p>
-
-<p>Check weather conditions for farming.</p>
+<p>Live weather conditions for farming.</p>
 
 <a href="index.html">
     <button>🏠 Back to Home</button>
@@ -27,24 +23,36 @@ Live weather integration coming soon.
 
 <div class="info-box">
 
-<h3>Temperature</h3>
-<p>28°C</p>
+<h3 id="weatherLocation">📍 Loading location...</h3>
 
-<h3>Humidity</h3>
-<p>65%</p>
+<h3>🌡️ Temperature</h3>
+<p id="liveTemp">Loading...</p>
 
-<h3>Wind Speed</h3>
-<p>12 km/h</p>
+<h3>💧 Humidity</h3>
+<p id="liveHumidity">Loading...</p>
+
+<h3>🌬️ Wind Speed</h3>
+<p id="liveWind">Loading...</p>
+
 <h3>🌱 Farming Tip</h3>
-
 <p>
 Irrigate crops early in the morning for better water efficiency.
 </p>
+
+</div>
+
+<br>
+
+<h2>📅 Next 10 Days Forecast</h2>
+
+<div id="forecastContainer" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px;">
+    <p>Loading forecast...</p>
 </div>
 
 </div>
 
 <script src="script.js"></script>
+<script src="weather-live.js"></script>
 
 </body>
 
