@@ -146,4 +146,36 @@ async function registerUser() {
     let result = await response.text();
     document.getElementById("registerResult").innerText = result;
 }
- 
+ function startVoiceSearch() {
+    if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+        alert("Voice search is not supported in this browser. Try Chrome.");
+        return;
+    }
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'hi-IN';
+    recognition.interimResults = false;
+
+    recognition.onstart = function () {
+        document.getElementById("voiceBtn").innerText = "🎙️ Listening...";
+    };
+
+    recognition.onresult = function (event) {
+        let transcript = event.results[0][0].transcript;
+        document.getElementById("searchInput").value = transcript;
+        document.getElementById("voiceBtn").innerText = "🎤";
+        searchCrop();
+    };
+
+    recognition.onerror = function () {
+        document.getElementById("voiceBtn").innerText = "🎤";
+        alert("Could not hear you, try again.");
+    };
+
+    recognition.onend = function () {
+        document.getElementById("voiceBtn").innerText = "🎤";
+    };
+
+    recognition.start();
+}
