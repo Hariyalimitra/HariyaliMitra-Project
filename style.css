@@ -12,6 +12,7 @@
 }
 
 body{
+    background-image: url("farmerr.jpg");
     text-align:center;
     background-color:var(--color-cream);
     margin:0;
