@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Calendar - HariyaliMitra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>HariyaliMitra</h2>
+
+        <a href="index.html">Home</a>
+        <a href="index.html#crops">Crops</a>
+        <a href="index.html#flowers">Flowers</a>
+        <a href="index.html#weather">Weather</a>
+        <a href="knowledge.html">Knowledge Center</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="irrigation.html">Irrigation</a>
+        <a href="fertilizer.html">Fertilizer</a>
+        <a href="weather.html">Weather Tool</a>
+        <a href="mandi.html">Mandi Prices</a>
+        <a href="calendar.html">Crop Calendar</a>
+        <a href="tools.html">Farmer Tools</a>
+        <a href="contact.html">Contact</a>
+        <button id="langBtn">🌐 Hindi</button>
+        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </nav>
+
+    <h2 class="logo">📅 Crop Calendar</h2>
+
+    <p>Janiye kab kya bona hai — sahi season mein sahi fasal!</p>
+
+    <div class="calculator-box" style="max-width:900px;">
+
+        <h1>🌾 Sowing & Harvesting Calendar</h1>
+
+        <label for="seasonFilter"><b>Season Filter:</b></label><br><br>
+
+        <select id="seasonFilter" onchange="filterCalendar()">
+            <option value="all">All Seasons</option>
+            <option value="kharif">Kharif (Monsoon)</option>
+            <option value="rabi">Rabi (Winter)</option>
+            <option value="zaid">Zaid (Summer)</option>
+        </select>
+
+        <br><br>
+
+        <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse: collapse; margin-top:15px; min-width:600px;">
+            <thead>
+                <tr style="background-color: green; color: white;">
+                    <th style="padding:10px; border:1px solid #ddd;">Crop</th>
+                    <th style="padding:10px; border:1px solid #ddd;">Season</th>
+                    <th style="padding:10px; border:1px solid #ddd;">Sowing Time</th>
+                    <th style="padding:10px; border:1px solid #ddd;">Harvesting Time</th>
+                    <th style="padding:10px; border:1px solid #ddd;">More Info</th>
+                </tr>
+            </thead>
+            <tbody id="calendarBody">
+                <!-- Rows inserted by JS -->
+            </tbody>
+        </table>
+        </div>
+
+    </div>
+
+    <footer>
+
+        <h3>🌱 HariyaliMitra</h3>
+
+        <p>Your Crop, Your Partner, Your Success</p>
+
+        <p>
+            <a href="knowledge.html">Knowledge Center</a> |
+            <a href="contact.html">Contact</a> |
+            <a href="login.html">Login</a>
+        </p>
+        <p>📧 support@hariyalimitra.com</p>
+        <p>📱 +91 9876543210</p>
+        <p>© 2026 HariyaliMitra</p>
+
+    </footer>
+
+    <a href="#">
+        <button class="top-btn">⬆ Back to Top</button>
+    </a>
+
+    <script src="script.js"></script>
+    <script src="calendar.js"></script>
+
+</body>
+</html>
