@@ -78,7 +78,10 @@ nav{
     display:flex;
     justify-content:center;
     align-items:center;
-    gap:18px;
+    gap:12px;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
     position:sticky;
     top:0;
     z-index:1000;
@@ -100,9 +103,10 @@ nav a:hover{
 
 nav h2{
     color:#1a5c1a;
-    font-size:20px;
+    font-size:16px;
     font-weight:800;
     white-space:nowrap;
+    flex-shrink:0;
 }
 
 /* ===== LOGO ===== */
