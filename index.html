@@ -4,846 +4,561 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HariyaliMitra</title>
-    <link rel="stylesheet" href="style.css"
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <nav>
-        <h2>HariyaliMitra</h2>
-
-        <a href="#">Home</a>
-        <a href="#crops">Crops</a>
-        <a href="#flowers">Flowers</a>
-        <a href="#weather">Weather</a>
-        <a href="knowledge.html">Knowledge Center</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="irrigation.html">Irrigation</a>
-        <a href="fertilizer.html">Fertilizer</a>
-        <a href="weather.html">Weather Tool</a>
-        <a href="mandi.html">Mandi Prices</a>
-        <a href="calendar.html">Crop Calendar</a>
-        <a href="tools.html">Farmer Tools</a>
-        <a href="contact.html">Contact</a>
-        <button id="langBtn">🌐 Hindi</button>
-        <button onclick="toggleDarkMode()">
-    🌙 Dark Mode
-</button>
-
-  <div id="guestButtons" style="display:flex; gap:10px;">
-
-    <a href="login.html">
-        <button>Login</button>
-    </a>
-
-    <a href="register.html">
-        <button>Register</button>
-    </a>
-
-</div>
-
-<div id="userButtons" style="display:none;">
-
-    <span id="homeWelcome"></span>
-
-    <a href="dashboard.html">
-        <button>Dashboard</button>
-    </a>
-
-    <button onclick="logoutUser()">
-        Logout
-    </button>
-
-</div>
+<nav>
+    <h2>🌱 HariyaliMitra</h2>
+    <a href="#">Home</a>
+    <a href="#crops">Crops</a>
+    <a href="#flowers">Flowers</a>
+    <a href="#weather">Weather</a>
+    <a href="knowledge.html">Knowledge Center</a>
+    <a href="calculator.html">Calculator</a>
+    <a href="irrigation.html">Irrigation</a>
+    <a href="fertilizer.html">Fertilizer</a>
+    <a href="weather.html">Weather Tool</a>
+    <a href="mandi.html">Mandi Prices</a>
+    <a href="calendar.html">Crop Calendar</a>
+    <a href="tools.html">Farmer Tools</a>
+    <a href="contact.html">Contact</a>
+    <button id="langBtn">🌐 Hindi</button>
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <div id="guestButtons" style="display:flex; gap:8px;">
+        <a href="login.html"><button>Login</button></a>
+        <a href="register.html"><button>Register</button></a>
+    </div>
+    <div id="userButtons" style="display:none;">
+        <span id="homeWelcome"></span>
+        <a href="dashboard.html"><button>Dashboard</button></a>
+        <button onclick="logoutUser()">Logout</button>
+    </div>
 </nav>
 
-    <h2 class="logo">🌱 HariyaliMitra</h2>
+<div class="hero">
+    <h3 id="welcomeText">Welcome to</h3>
+    <h1 id="mainTitle">HariyaliMitra</h1>
+    <p id="mainTagline">Your Crop, Your Partner, Your Success 🌱</p>
+    <p class="hero-tagline">Trusted by Farmers • Easy to Use • Free Knowledge</p>
 
-    <div class="hero">
-
-        <h3 id="welcomeText">Welcome to</h3>
-
-        <h1 id="mainTitle">HariyaliMitra</h1>
-
-        <p id="mainTagline">
-    Your Crop, Your Partner, Your Success
-<p>
-    Empowering Farmers with Knowledge and Technology 🌱
-    <p class="hero-tagline">
-    Trusted by Farmers • Easy to Use • Free Knowledge
-</p>
-</p>
-        <div class="search-box">
-            <input
-type="text"
-id="searchInput"
-placeholder="Search crops or flowers">
-            <button id="searchBtn" onclick="searchCrop()">
-    Search
-</button>
-            <button id="voiceBtn" onclick="startVoiceSearch()">
-    🎤
-</button>
-        </div>
-        <p style="color:white; font-size:14px; margin-top:5px;">
-            🎤 Voice not working? Type your search above
-        </p>
-<div class="search-links">
-
-    <h3 id="popularSearches">🔍 Popular Searches</h3>
-
-    <a href="wheat.html">Wheat</a> |
-
-    <a href="rice.html">Rice</a> |
-
-    <a href="rose.html">Rose</a> |
-
-    <a href="jasmine.html">Jasmine</a>
-
-</div>
-        <br>
-
-        <a href="#crops">
-            <button>Explore Crops</button>
-        </a>
-
-        <a href="knowledge.html">
-            <button>Learn Farming</button>
-        </a>
-
-        <div class="cards">
-
-            <div class="card farmer">
-                <h3 id="farmerTitle">I am a Farmer</h3>
-                <p>Manage your crops easily</p>
-            </div>
-
-            <div class="card flower">
-                <h3 id="flowerTitle">I am a Flower Grower</h3>
-                <p>Manage your flowers easily</p>
-            </div>
-
-        </div> <div class="trust-badges">
-            <div class="hero-stats">
-
-    <div class="badge">
-        👨‍🌾 1000+ Farmers
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="🔍 Search crops or flowers...">
+        <button id="searchBtn" onclick="searchCrop()">Search</button>
+        <button id="voiceBtn" onclick="startVoiceSearch()">🎤</button>
     </div>
+    <p style="color:#b8f5b8; font-size:13px; margin-top:6px;">🎤 Voice not working? Type your search above</p>
 
-    <div class="badge">
-        🌾 100+ Crop Articles
+    <div class="search-links">
+        <h3 id="popularSearches">🔍 Popular Searches</h3>
+        <a href="wheat.html">Wheat</a> |
+        <a href="rice.html">Rice</a> |
+        <a href="rose.html">Rose</a> |
+        <a href="jasmine.html">Jasmine</a>
     </div>
-
-    <div class="badge">
-        🛠 4 Farming Tools
-    </div>
-
-</div>
-
-    <div class="badge">
-        🌱 500+ Farmers Helped
-    </div>
-
-    <div class="badge">
-        🌾 50+ Crop Guides
-    </div>
-
-    <div class="badge">
-        📚 Free Knowledge Center
-    </div>
-
-</div>
-
-    </div>
-
-    <section id="crops" class="crops">
-
-        <h2 id="cropsHeading">Popular Crops</h2>
-
-        <div class="crop-container">
-
-            <a href="wheat.html" style="text-decoration:none; color:black;">
-                <div class="crop-card">🌾 Wheat</div>
-            </a>
-
-            <a href="rice.html" style="text-decoration:none; color:black;">
-                <div class="crop-card">🌾 Rice</div>
-            </a>
-
-            <a href="mustard.html" style="text-decoration:none; color:black;">
-                <div class="crop-card">🌾 Mustard</div>
-            </a>
-
-            <a href="sugarcane.html" style="text-decoration:none; color:black;">
-                <div class="crop-card">🌾 Sugarcane</div>
-            </a>
-
-        </div>
-
-    </section>
-
-    <section id="flowers" class="flowers">
-
-        <h2 id="flowersHeading">Popular Flowers</h2>
-
-        <div class="flower-container">
-
-            <a href="rose.html" style="text-decoration:none;">
-                <div class="flower-card">🌸 Rose</div>
-            </a>
-
-            <a href="marigold.html" style="text-decoration:none;">
-                <div class="flower-card">🌸 Marigold</div>
-            </a>
-
-            <a href="jasmine.html" style="text-decoration:none;">
-                <div class="flower-card">🌸 Jasmine</div>
-            </a>
-
-            <a href="lily.html" style="text-decoration:none;">
-                <div class="flower-card">🌸 Lily</div>
-            </a>
-
-        </div>
-
-    </section>
-
-   <section id="weather" class="weather">
-
-        <h2 id="weatherHeading">Today's Weather</h2>
-
-        <div class="weather-card">
-
-    <h2 id="homeWeatherLocation">📍 Loading...</h2>
-
-    <h3 id="homeWeatherTemp">--°C</h3>
-
-    <p id="homeWeatherDesc">Loading...</p>
-
-    <p id="homeWeatherHumidity">💧 Humidity: --%</p>
-
-    <p id="homeWeatherWind">🌬️ Wind: -- km/h</p>
 
     <br>
 
-    <a href="weather.html">
-        <button>📅 View 10-Day Forecast</button>
-    </a>
+    <a href="#crops"><button>🌾 Explore Crops</button></a>
+    <a href="knowledge.html"><button>📚 Learn Farming</button></a>
 
-</div>
-
-    </section>
-
-    <section class="featured-crop">
-
-        <h2>🌟 Featured Crop of the Week</h2>
-
-        <div class="info-box">
-
-            <h3>🌾 Wheat</h3>
-
-            <p>Wheat is one of India's most important food crops.</p>
-
-            <a href="wheat.html">
-                <button>Learn More</button>
-            </a>
-
+    <div class="cards">
+        <div class="card farmer">
+            <h3 id="farmerTitle">👨‍🌾 I am a Farmer</h3>
+            <p>Manage your crops easily</p>
         </div>
-
-    </section>
-
-    <section class="about-section">
-
-        <h2>🌱 About HariyaliMitra</h2>
-
-        <div class="info-box">
-
-            <p>
-                HariyaliMitra helps farmers and flower growers learn about crops,
-                flowers, weather and modern agriculture techniques.
-            </p>
-
+        <div class="card flower">
+            <h3 id="flowerTitle">🌸 I am a Flower Grower</h3>
+            <p>Manage your flowers easily</p>
         </div>
-
-    </section>
-
-    <section class="tips-section">
-
-        <h2>📰 Latest Farming Tips</h2>
-
-        <div class="tips-container">
-
-            <div class="info-box">
-                <h3>💧 Water Management</h3>
-                <p>Avoid overwatering crops to prevent root diseases.</p>
-            </div>
-
-            <div class="info-box">
-                <h3>🌱 Quality Seeds</h3>
-                <p>Always use certified seeds for better production.</p>
-            </div>
-
-            <div class="info-box">
-                <h3>🪱 Organic Farming</h3>
-                <p>Use compost and organic fertilizers whenever possible.</p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section class="stats-section">
-
-        <h2>📊 Agriculture Statistics</h2>
-
-        <div class="cards">
-
-            <div class="card farmer">
-                <h3>50+</h3>
-                <p>Crops Information</p>
-            </div>
-
-            <div class="card flower">
-                <h3>20+</h3>
-                <p>Flower Guides</p>
-            </div>
-
-        </div>
-
-    </section>
-    <section class="featured-flower">
-
-    <h2>🌸 Featured Flower of the Week</h2>
-
-    <div class="info-box">
-
-        <h3>🌹 Rose</h3>
-
-        <p>Rose is one of the most popular flowers used for decoration and gifting.</p>
-
-        <a href="rose.html">
-            <button>Learn More</button>
-        </a>
-
     </div>
 
+    <div class="trust-badges">
+        <div class="hero-stats">
+            <div class="badge">👨‍🌾 1000+ Farmers</div>
+            <div class="badge">🌾 100+ Crop Articles</div>
+            <div class="badge">🛠 4 Farming Tools</div>
+        </div>
+        <div class="badge">🌱 500+ Farmers Helped</div>
+        <div class="badge">🌾 50+ Crop Guides</div>
+        <div class="badge">📚 Free Knowledge Center</div>
+    </div>
+</div>
+
+<section id="crops" class="crops">
+    <h2 id="cropsHeading">🌾 Popular Crops</h2>
+    <div class="crop-container">
+        <a href="wheat.html" style="text-decoration:none;">
+            <div class="crop-card">🌾 Wheat</div>
+        </a>
+        <a href="rice.html" style="text-decoration:none;">
+            <div class="crop-card">🌾 Rice</div>
+        </a>
+        <a href="mustard.html" style="text-decoration:none;">
+            <div class="crop-card">🌾 Mustard</div>
+        </a>
+        <a href="sugarcane.html" style="text-decoration:none;">
+            <div class="crop-card">🌾 Sugarcane</div>
+        </a>
+    </div>
 </section>
 
-    <section class="why-us">
+<section id="flowers" class="flowers">
+    <h2 id="flowersHeading">🌸 Popular Flowers</h2>
+    <div class="flower-container">
+        <a href="rose.html" style="text-decoration:none;">
+            <div class="flower-card">🌹 Rose</div>
+        </a>
+        <a href="marigold.html" style="text-decoration:none;">
+            <div class="flower-card">🌼 Marigold</div>
+        </a>
+        <a href="jasmine.html" style="text-decoration:none;">
+            <div class="flower-card">🌸 Jasmine</div>
+        </a>
+        <a href="lily.html" style="text-decoration:none;">
+            <div class="flower-card">🌷 Lily</div>
+        </a>
+    </div>
+</section>
 
-    <h2>⭐ Why Choose HariyaliMitra?</h2>
+<section id="weather" class="weather">
+    <h2 id="weatherHeading">🌦️ Today's Weather</h2>
+    <div class="weather-card">
+        <h2 id="homeWeatherLocation">📍 Loading...</h2>
+        <h3 id="homeWeatherTemp">--°C</h3>
+        <p id="homeWeatherDesc">Loading...</p>
+        <p id="homeWeatherHumidity">💧 Humidity: --%</p>
+        <p id="homeWeatherWind">🌬️ Wind: -- km/h</p>
+        <br>
+        <a href="weather.html"><button>📅 View 10-Day Forecast</button></a>
+    </div>
+</section>
 
+<section class="featured-crop">
+    <h2>🌟 Featured Crop of the Week</h2>
+    <div class="info-box">
+        <h3>🌾 Wheat</h3>
+        <p>Wheat is one of India's most important food crops.</p>
+        <a href="wheat.html"><button>Learn More</button></a>
+    </div>
+</section>
+
+<section class="about-section">
+    <h2>🌱 About HariyaliMitra</h2>
+    <div class="info-box">
+        <p>HariyaliMitra helps farmers and flower growers learn about crops, flowers, weather and modern agriculture techniques.</p>
+    </div>
+</section>
+
+<section class="tips-section">
+    <h2>📰 Latest Farming Tips</h2>
     <div class="tips-container">
+        <div class="info-box">
+            <h3>💧 Water Management</h3>
+            <p>Avoid overwatering crops to prevent root diseases.</p>
+        </div>
+        <div class="info-box">
+            <h3>🌱 Quality Seeds</h3>
+            <p>Always use certified seeds for better production.</p>
+        </div>
+        <div class="info-box">
+            <h3>🪱 Organic Farming</h3>
+            <p>Use compost and organic fertilizers whenever possible.</p>
+        </div>
+    </div>
+</section>
 
+<section class="stats-section">
+    <h2>📊 Agriculture Statistics</h2>
+    <div class="cards">
+        <div class="card farmer">
+            <h3>50+</h3>
+            <p>Crops Information</p>
+        </div>
+        <div class="card flower">
+            <h3>20+</h3>
+            <p>Flower Guides</p>
+        </div>
+    </div>
+</section>
+
+<section class="featured-flower">
+    <h2>🌸 Featured Flower of the Week</h2>
+    <div class="info-box">
+        <h3>🌹 Rose</h3>
+        <p>Rose is one of the most popular flowers used for decoration and gifting.</p>
+        <a href="rose.html"><button>Learn More</button></a>
+    </div>
+</section>
+
+<section class="why-us">
+    <h2>⭐ Why Choose HariyaliMitra?</h2>
+    <div class="tips-container">
         <div class="info-box">
             <h3>🌾 Crop Information</h3>
             <p>Detailed information about major crops.</p>
         </div>
-
         <div class="info-box">
             <h3>🌦️ Weather Updates</h3>
             <p>Easy weather information for farmers.</p>
         </div>
-
         <div class="info-box">
             <h3>📚 Farming Knowledge</h3>
             <p>Tips and guides to improve productivity.</p>
         </div>
-
     </div>
-
 </section>
+
 <section class="top-crops">
-
     <h2>🏆 Top Crops in India</h2>
-
     <div class="cards">
-
         <a href="wheat.html" style="text-decoration:none;">
-    <div class="card farmer">
-        <h3>🌾 Wheat</h3>
-        <p>Major food crop</p>
-    </div>
-</a>
+            <div class="card farmer">
+                <h3>🌾 Wheat</h3>
+                <p>Major food crop</p>
+            </div>
+        </a>
         <a href="rice.html" style="text-decoration:none;">
-    <div class="card farmer">
-        <h3>🌾 Rice</h3>
-        <p>Staple crop of India</p>
-    </div>
-</a>
-
+            <div class="card farmer">
+                <h3>🌾 Rice</h3>
+                <p>Staple crop of India</p>
+            </div>
+        </a>
         <a href="sugarcane.html" style="text-decoration:none;">
-    <div class="card farmer">
-        <h3>🌾 Sugarcane</h3>
-        <p>Used for sugar production</p>
+            <div class="card farmer">
+                <h3>🌾 Sugarcane</h3>
+                <p>Used for sugar production</p>
+            </div>
+        </a>
     </div>
-</a>
-    </div>
-
 </section>
+
 <section class="quote-section">
-
     <div class="info-box">
-
         <h2>🌱 Farmer's Thought</h2>
-
-        <p>
-            "Agriculture is the foundation of civilization and every farmer is a builder of the future."
-        </p>
-
+        <p>"Agriculture is the foundation of civilization and every farmer is a builder of the future."</p>
     </div>
-
 </section>
+
 <section class="quick-access">
-
     <h2>⚡ Quick Access</h2>
-
     <div class="cards">
-
         <a href="knowledge.html" style="text-decoration:none;">
             <div class="card farmer">
                 <h3>📚 Knowledge Center</h3>
                 <p>Learn farming tips</p>
             </div>
         </a>
-
         <a href="contact.html" style="text-decoration:none;">
             <div class="card flower">
                 <h3>📞 Contact Us</h3>
                 <p>Get support anytime</p>
             </div>
         </a>
-
         <a href="translator.html" style="text-decoration:none;">
             <div class="card farmer">
                 <h3>🌐 Translator</h3>
                 <p>Convert Hindi to English</p>
             </div>
         </a>
-
     </div>
-
 </section>
+
 <section class="counter-section">
-
     <h2>📈 Our Impact</h2>
-
     <div class="cards">
-
         <div class="card farmer">
             <h3>500+</h3>
             <p>Farmers Reached</p>
         </div>
-
         <div class="card flower">
             <h3>100+</h3>
             <p>Articles Published</p>
         </div>
-
     </div>
-
 </section>
+
 <section class="testimonials">
-
     <h2>💬 Farmer Reviews</h2>
-
     <div class="tips-container">
-
         <div class="info-box">
             <p>"HariyaliMitra helped me learn about wheat cultivation."</p>
             <h3>- Rajesh Kumar</h3>
         </div>
-
         <div class="info-box">
             <p>"The farming tips are very useful and easy to understand."</p>
             <h3>- Amit Singh</h3>
         </div>
-
     </div>
-
 </section>
+
 <section class="newsletter">
-
     <h2>📩 Stay Updated</h2>
-
     <p>Get farming tips and crop updates.</p>
-
-    <input
-type="text"
-id="phoneNumber"
-placeholder="Enter Phone Number">
+    <input type="text" id="phoneNumber" placeholder="Enter Phone Number">
     <br><br>
-
-    <button onclick="subscribeUser()">
-    Subscribe
-</button>
-<p id="subscribeResult"></p>
-
+    <button onclick="subscribeUser()">Subscribe</button>
+    <p id="subscribeResult"></p>
 </section>
+
 <section class="faq-section">
-
     <h2>❓ Frequently Asked Questions</h2>
-
     <div class="info-box">
-
         <h3>How can HariyaliMitra help farmers?</h3>
         <p>It provides crop information, weather updates and farming tips.</p>
-
+        <br>
         <h3>Is HariyaliMitra free?</h3>
         <p>Yes, it is completely free to use.</p>
-
+        <br>
         <h3>Can I learn flower farming here?</h3>
         <p>Yes, flower guides are also available.</p>
-
     </div>
-
 </section>
+
 <section class="cta-section">
-
     <div class="info-box">
-
         <h2>🚀 Ready to Improve Your Farming?</h2>
-
         <p>Explore crops, flowers and farming knowledge today.</p>
-
-        <a href="#crops">
-            <button>Get Started</button>
-        </a>
-
+        <a href="#crops"><button>Get Started</button></a>
     </div>
-
 </section>
+
 <section class="services-section">
-
     <h2>🚀 Our Services</h2>
-
     <div class="cards">
-
         <div class="card farmer">
             <h3>🌾 Crop Guidance</h3>
             <p>Learn about major crops and cultivation methods.</p>
         </div>
-
         <div class="card flower">
             <h3>🌸 Flower Guidance</h3>
             <p>Explore flower farming and care techniques.</p>
         </div>
-
         <div class="card farmer">
             <h3>💧 Irrigation Planning</h3>
             <p>Estimate water requirements for your fields.</p>
         </div>
-
         <div class="card flower">
             <h3>🧪 Fertilizer Planning</h3>
             <p>Calculate fertilizer needs easily.</p>
         </div>
-
     </div>
+</section>
+
 <section class="highlights-section">
-
     <h2>✨ Website Highlights</h2>
-
     <div class="cards">
-
         <div class="card farmer">
             <h3>🌾 Crop Guides</h3>
             <p>Easy crop learning resources.</p>
         </div>
-
         <div class="card flower">
             <h3>🌸 Flower Guides</h3>
             <p>Information about flowers and care.</p>
         </div>
-
         <div class="card farmer">
             <h3>🛠 Useful Tools</h3>
             <p>Calculators for farming decisions.</p>
         </div>
-
         <div class="card flower">
             <h3>🌦 Weather Support</h3>
             <p>Weather information for planning.</p>
         </div>
-
     </div>
 </section>
+
 <section class="goals-section">
-
     <h2>🎯 Our Goals</h2>
-
     <div class="info-box">
-
         <p>🌾 Support Farmers Across India</p>
-
         <p>📚 Spread Farming Knowledge</p>
-
         <p>🌱 Promote Smart Agriculture</p>
-
         <p>🚜 Improve Crop Productivity</p>
-
     </div>
-
 </section>
+
 <section class="tools-benefits">
-
     <h2>🏆 Why Choose Our Tools?</h2>
-
     <div class="cards">
-
         <div class="card farmer">
             <h3>⚡ Fast Calculations</h3>
             <p>Get instant farming estimates.</p>
         </div>
-
         <div class="card flower">
             <h3>💯 Free Access</h3>
             <p>All tools are available for free.</p>
         </div>
-
         <div class="card farmer">
             <h3>📱 Mobile Friendly</h3>
             <p>Works smoothly on smartphones.</p>
         </div>
-
         <div class="card flower">
             <h3>🌾 Farmer Friendly</h3>
             <p>Simple and easy to understand.</p>
         </div>
-
     </div>
-
 </section>
+
 <section class="vision-section">
-
     <h2>🌍 Future Vision</h2>
-
     <div class="info-box">
-
         <p>🤖 AI Support for Farmers</p>
-
         <p>🌾 Smart Farming Solutions</p>
-
         <p>📈 Better Productivity</p>
-
         <p>💻 Digital Agriculture for Everyone</p>
-
     </div>
-
 </section>
+
 <section class="featured-services">
-
     <h2>⭐ Featured Services</h2>
-
     <div class="cards">
-
         <div class="card farmer">
             <h3>🌾 Crop Information</h3>
             <p>Learn cultivation methods and crop care.</p>
         </div>
-
         <div class="card flower">
             <h3>🌸 Flower Information</h3>
             <p>Discover flower farming techniques.</p>
         </div>
-
         <div class="card farmer">
             <h3>🌦 Weather Updates</h3>
             <p>Stay updated with weather conditions.</p>
         </div>
-
         <div class="card flower">
             <h3>🛠 Farming Tools</h3>
             <p>Use calculators and farming utilities.</p>
         </div>
-
     </div>
-
 </section>
+
 <section class="mission-section">
-
     <h2>🎯 Our Mission</h2>
-
     <div class="info-box">
-
         <p>🌱 Helping farmers with modern technology.</p>
-
         <p>📚 Sharing easy farming knowledge.</p>
-
         <p>💧 Improving crop productivity.</p>
-
         <p>🚜 Making agriculture smarter and easier.</p>
-
     </div>
-
 </section>
+
 <section class="achievement-section">
-
     <h2>🏅 Website Achievements</h2>
-
     <div class="cards">
-
         <div class="card farmer">
             <h3>1000+</h3>
             <p>Farmers Helped</p>
         </div>
-
         <div class="card flower">
             <h3>100+</h3>
             <p>Crop Articles</p>
         </div>
-
         <div class="card farmer">
             <h3>20+</h3>
             <p>Flower Guides</p>
         </div>
-
         <div class="card flower">
             <h3>4+</h3>
             <p>Farming Tools</p>
         </div>
-
     </div>
-
 </section>
+
 <section class="love-section">
-
     <h2>❤️ Why Farmers Love HariyaliMitra</h2>
-
     <div class="cards">
-
         <div class="card farmer">
             <h3>🌾 Easy to Use</h3>
             <p>Simple tools for every farmer.</p>
         </div>
-
         <div class="card flower">
             <h3>💰 Free Tools</h3>
             <p>All calculators are free.</p>
         </div>
-
         <div class="card farmer">
             <h3>📚 Farming Knowledge</h3>
             <p>Helpful crop and flower guides.</p>
         </div>
-
         <div class="card flower">
             <h3>🌦 Weather Support</h3>
             <p>Weather information for planning.</p>
         </div>
-
     </div>
-
 </section>
+
 <section class="updates-section">
-
     <h2>📢 Latest Updates</h2>
-
     <div class="info-box">
-
         <p>✅ New Crop Guides Added</p>
-
         <p>✅ Weather Tool Available</p>
-
         <p>✅ Fertilizer Calculator Added</p>
-
         <p>✅ Farmer Tools Page Live</p>
-
     </div>
-
 </section>
+
 <section class="featured-tool">
-
     <h2>⭐ Featured Tool of the Week</h2>
-
     <div class="info-box">
-
         <h3>🧪 Fertilizer Calculator</h3>
-
-        <p>
-            Calculate fertilizer requirements quickly and improve crop productivity.
-        </p>
-
-        <a href="fertilizer.html">
-            <button>Open Tool</button>
-        </a>
-
+        <p>Calculate fertilizer requirements quickly and improve crop productivity.</p>
+        <a href="fertilizer.html"><button>Open Tool</button></a>
     </div>
-
 </section>
+
 <section class="tools-section">
-
     <h2>🛠 Farmer Tools</h2>
-
     <div class="cards">
-
         <a href="calculator.html" style="text-decoration:none;">
             <div class="card farmer">
                 <h3>🌾 Yield Calculator</h3>
                 <p>Calculate crop production</p>
             </div>
         </a>
-
         <a href="irrigation.html" style="text-decoration:none;">
             <div class="card farmer">
                 <h3>💧 Irrigation Calculator</h3>
                 <p>Estimate water needs</p>
             </div>
         </a>
-
         <a href="fertilizer.html" style="text-decoration:none;">
             <div class="card farmer">
                 <h3>🧪 Fertilizer Calculator</h3>
                 <p>Calculate fertilizer requirement</p>
             </div>
         </a>
-
         <a href="weather.html" style="text-decoration:none;">
             <div class="card farmer">
                 <h3>🌦 Weather Tool</h3>
                 <p>Check weather information</p>
             </div>
         </a>
-
     </div>
-
 </section>
-    <footer>
 
-        <h3>🌱 HariyaliMitra</h3>
+<footer>
+    <h3>🌱 HariyaliMitra</h3>
+    <p>Your Crop, Your Partner, Your Success</p>
+    <p>
+        <a href="knowledge.html">Knowledge Center</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="login.html">Login</a>
+    </p>
+    <p>📧 support@hariyalimitra.com</p>
+    <p>📱 +91 9876543210</p>
+    <p>© 2026 HariyaliMitra</p>
+</footer>
 
-        <p>Your Crop, Your Partner, Your Success</p>
+<a href="#"><button class="top-btn">⬆ Back to Top</button></a>
 
-        <p>
-    <a href="knowledge.html">Knowledge Center</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="login.html">Login</a>
-</p>
-        <p>📧 support@hariyalimitra.com</p>
-
-<p>📱 +91 9876543210</p>
-
-        <p>© 2026 HariyaliMitra</p>
-
-    </footer>
-    <a href="#">
-    <button class="top-btn">⬆ Back to Top</button>
-</a>
 <script src="script.js"></script>
-...
 <script src="weather-live.js"></script>
 <script>
-    // Homepage live weather (separate from weather.html)
     if (typeof DEFAULT_LAT !== 'undefined') {
-        let homeLat = DEFAULT_LAT;
-        let homeLon = DEFAULT_LON;
-
-        fetch("https://api.open-meteo.com/v1/forecast?latitude=" + homeLat + "&longitude=" + homeLon + "&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto")
+        fetch("https://api.open-meteo.com/v1/forecast?latitude=" + DEFAULT_LAT + "&longitude=" + DEFAULT_LON + "&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code&timezone=auto")
             .then(res => res.json())
             .then(data => {
                 let current = data.current;
                 let [icon, desc] = weatherCodeToInfo(current.weather_code);
-
                 document.getElementById("homeWeatherLocation").innerText = "📍 " + DEFAULT_LOCATION_NAME;
                 document.getElementById("homeWeatherTemp").innerText = current.temperature_2m + "°C";
                 document.getElementById("homeWeatherDesc").innerText = icon + " " + desc;
@@ -855,32 +570,18 @@ placeholder="Enter Phone Number">
 </script>
 
 <script>
-
-let fullname =
-localStorage.getItem("fullname");
-
+let fullname = localStorage.getItem("fullname");
 if (fullname) {
-
-    document.getElementById("guestButtons").style.display =
-    "none";
-
-    document.getElementById("userButtons").style.display =
-    "block";
-
-    document.getElementById("homeWelcome").innerText =
-    "🌱 Welcome " + fullname;
-
+    document.getElementById("guestButtons").style.display = "none";
+    document.getElementById("userButtons").style.display = "flex";
+    document.getElementById("homeWelcome").innerText = "🌱 Welcome " + fullname;
 }
 
 function logoutUser() {
-
     localStorage.removeItem("fullname");
     localStorage.removeItem("email");
-
     window.location.reload();
-
 }
-
 </script>
 
 </body>
