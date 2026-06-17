@@ -22,7 +22,7 @@ function searchCrop() {
     } else if (search === "lily" || search === "lili") {
         window.location.href = "lily.html";
     } else {
-        alert("Not found");
+        alert("Not found! Try: wheat, rice, rose, jasmine, mustard, sugarcane, marigold, lily");
     }
 }
 
@@ -91,14 +91,10 @@ async function generateOTP() {
         alert("Please enter email");
         return;
     }
-
     const { error } = await supabaseClient.auth.signInWithOtp({
         email: email,
-        options: {
-            shouldCreateUser: true
-        }
+        options: { shouldCreateUser: true }
     });
-
     if (error) {
         document.getElementById("otpDisplay").innerText = "❌ OTP Failed: " + error.message;
     } else {
@@ -109,28 +105,22 @@ async function generateOTP() {
 async function verifyOTP() {
     let email = document.getElementById("email").value;
     let otp = document.getElementById("userOTP").value;
-
     const { data, error } = await supabaseClient.auth.verifyOtp({
         email: email,
         token: otp,
         type: 'magiclink'
     });
-
     if (error) {
         document.getElementById("loginResult").innerText = "❌ Invalid OTP";
         return;
     }
-
     let userResponse = await fetch("/check-user?email=" + email);
     let userResult = await userResponse.json();
-
     if (userResult.status === "FOUND") {
         localStorage.setItem("fullname", userResult.fullname);
         localStorage.setItem("email", userResult.email);
         document.getElementById("loginResult").innerText = "✅ Login Successful";
-        setTimeout(() => {
-            window.location.href = "dashboard.html";
-        }, 1000);
+        setTimeout(() => { window.location.href = "dashboard.html"; }, 1000);
     } else {
         document.getElementById("loginResult").innerText = "❌ Account Not Found";
     }
@@ -139,23 +129,20 @@ async function verifyOTP() {
 async function registerUser() {
     let fullname = document.getElementById("name").value;
     let email = document.getElementById("email").value;
-
     let response = await fetch("/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ fullname: fullname, email: email })
     });
-
     let result = await response.text();
     document.getElementById("registerResult").innerText = result;
 }
 
 function startVoiceSearch() {
     if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
-        alert("Voice search is not supported in this browser. Try Chrome.");
+        alert("Voice search not supported. Try Chrome on desktop.");
         return;
     }
-
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
     recognition.lang = 'en-IN';
@@ -164,25 +151,20 @@ function startVoiceSearch() {
     recognition.maxAlternatives = 1;
 
     recognition.onstart = function () {
-        document.getElementById("voiceBtn").innerText = "🎙️ Listening...";
+        document.getElementById("voiceBtn").innerText = "🎙️...";
     };
-
     recognition.onresult = function (event) {
-        let transcript = event.results[0][0].transcript;
-        transcript = transcript.toLowerCase().trim();
+        let transcript = event.results[0][0].transcript.toLowerCase().trim();
         document.getElementById("searchInput").value = transcript;
         document.getElementById("voiceBtn").innerText = "🎤";
         searchCrop();
     };
-
     recognition.onerror = function () {
         document.getElementById("voiceBtn").innerText = "🎤";
-        alert("Could not hear you, try again.");
+        alert("Could not hear you. Please type instead.");
     };
-
     recognition.onend = function () {
         document.getElementById("voiceBtn").innerText = "🎤";
     };
-
     recognition.start();
 }

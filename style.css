@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+*{ box-sizing:border-box; margin:0; padding:0; }
 
 body{
     text-align:center;
@@ -13,27 +9,10 @@ body{
     color:#1a1a1a;
 }
 
-h1{
-    color:#1a5c1a;
-    font-size:50px;
-    font-weight:800;
-}
-
-h2{
-    color:#1a5c1a;
-    font-weight:700;
-}
-
-h3{
-    color:#1a5c1a;
-    font-weight:600;
-}
-
-p{
-    font-size:18px;
-    line-height:1.7;
-    color:#333;
-}
+h1{ color:#1a5c1a; font-size:50px; font-weight:800; }
+h2{ color:#1a5c1a; font-weight:700; }
+h3{ color:#1a5c1a; font-weight:600; }
+p{ font-size:18px; line-height:1.7; color:#333; }
 
 button{
     background-color:#2e7d32;
@@ -68,15 +47,14 @@ input{
 input:focus{
     outline:none;
     border-color:#e91e8c;
-    box-shadow:0 2px 12px rgba(233,30,140,0.15);
 }
 
 /* ===== NAV ===== */
 nav{
     background-color:#ffffff;
-    padding:14px 20px;
+    padding:12px 20px;
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
     gap:12px;
     flex-wrap:nowrap;
@@ -89,21 +67,24 @@ nav{
     border-bottom:3px solid #2e7d32;
 }
 
+nav::-webkit-scrollbar{ height:3px; }
+nav::-webkit-scrollbar-thumb{ background:#2e7d32; border-radius:3px; }
+
 nav a{
     text-decoration:none;
     color:#1a1a1a;
     font-weight:600;
-    font-size:14px;
+    font-size:13px;
+    white-space:nowrap;
+    flex-shrink:0;
     transition:color 0.2s;
 }
 
-nav a:hover{
-    color:#2e7d32;
-}
+nav a:hover{ color:#2e7d32; }
 
 nav h2{
     color:#1a5c1a;
-    font-size:16px;
+    font-size:17px;
     font-weight:800;
     white-space:nowrap;
     flex-shrink:0;
@@ -121,13 +102,13 @@ nav h2{
 /* ===== HERO ===== */
 .hero{
     text-align:center;
-    padding:100px 40px;
-    min-height:560px;
+    padding:80px 40px 60px;
+    min-height:580px;
     background-image:
-        linear-gradient(rgba(0,30,0,0.52), rgba(0,30,0,0.52)),
+        linear-gradient(rgba(0,25,0,0.50), rgba(0,25,0,0.50)),
         url("farmerr.jpg");
     background-size:cover;
-    background-position:center top;
+    background-position:30% center;
     border-radius:24px;
     margin:16px;
     display:flex;
@@ -137,10 +118,10 @@ nav h2{
 }
 
 .hero h1{
-    font-size:64px;
+    font-size:60px;
     color:#ffffff;
     font-weight:800;
-    text-shadow:0 2px 12px rgba(0,0,0,0.4);
+    text-shadow:0 2px 12px rgba(0,0,0,0.5);
     margin-bottom:10px;
 }
 
@@ -151,61 +132,140 @@ nav h2{
     margin-bottom:8px;
 }
 
-.hero p{
-    color:#ffffff;
-    font-size:20px;
-}
+.hero p{ color:#ffffff; font-size:18px; }
 
 .hero input{
-    width:420px;
+    width:380px;
     padding:14px 18px;
     border-radius:12px;
     border:none;
     font-size:16px;
     box-shadow:0 4px 16px rgba(0,0,0,0.2);
-}
-
-.hero input:focus{
-    outline:2px solid #e91e8c;
+    background:rgba(255,255,255,0.95);
+    color:#1a1a1a;
 }
 
 .hero-tagline{
     color:#ffd54f;
-    font-size:16px;
+    font-size:15px;
     font-weight:600;
-    margin-top:8px;
+    margin-top:6px;
 }
 
 /* ===== SEARCH BOX ===== */
 .search-box{
     display:flex;
     justify-content:center;
-    gap:10px;
+    align-items:center;
+    gap:8px;
     margin-top:20px;
     margin-bottom:10px;
     flex-wrap:wrap;
 }
 
-.search-links{
-    margin-top:14px;
-    color:white;
+.search-links{ margin-top:14px; }
+.search-links h3{ color:#b8f5b8; font-size:14px; margin-bottom:8px; }
+.search-links a{ text-decoration:none; font-weight:600; color:#ffd54f; }
+.search-links a:hover{ color:#ffffff; }
+
+/* ===== HERO CARDS (I am a Farmer / Flower Grower) ===== */
+.hero-cards{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin-top:24px;
+    flex-wrap:wrap;
 }
 
-.search-links h3{
-    color:#b8f5b8;
-    font-size:15px;
-    margin-bottom:8px;
-}
-
-.search-links a{
+.hero-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    width:200px;
+    padding:20px 16px;
+    border-radius:16px;
     text-decoration:none;
+    color:white;
     font-weight:600;
-    color:#ffd54f;
-    transition:color 0.2s;
+    transition:0.3s;
+    position:relative;
+    box-shadow:0 4px 16px rgba(0,0,0,0.2);
 }
 
-.search-links a:hover{
-    color:#ffffff;
+.hero-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 24px rgba(0,0,0,0.3);
+}
+
+.farmer-card{
+    background:linear-gradient(135deg, #1b5e20, #2e7d32);
+}
+
+.flower-card{
+    background:linear-gradient(135deg, #880e4f, #c2185b);
+}
+
+.hero-card-icon{ font-size:32px; margin-bottom:8px; }
+.hero-card h3{ color:white; font-size:15px; margin-bottom:4px; }
+.hero-card p{ color:rgba(255,255,255,0.85); font-size:12px; margin:0; }
+.hero-card-arrow{ font-size:18px; margin-top:8px; opacity:0.8; }
+
+/* ===== FEATURE ICONS ROW ===== */
+.feature-icons-row{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    flex-wrap:wrap;
+    background:white;
+    padding:24px 20px;
+    margin:0 16px;
+    border-radius:0 0 20px 20px;
+    box-shadow:0 4px 16px rgba(46,125,50,0.08);
+    border:1px solid #e8f5e9;
+    border-top:none;
+}
+
+.feature-icon-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-decoration:none;
+    color:#1a5c1a;
+    width:90px;
+    transition:0.2s;
+}
+
+.feature-icon-item:hover{
+    transform:translateY(-3px);
+}
+
+.feature-icon{
+    font-size:30px;
+    background:#f0fdf0;
+    border:2px solid #e8f5e9;
+    border-radius:50%;
+    width:60px;
+    height:60px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:6px;
+    transition:0.2s;
+}
+
+.feature-icon-item:hover .feature-icon{
+    background:#2e7d32;
+    border-color:#2e7d32;
+    font-size:28px;
+}
+
+.feature-icon-item p{
+    font-size:12px;
+    font-weight:600;
+    color:#1a5c1a;
+    margin:0;
+    line-height:1.3;
 }
 
 /* ===== CARDS ===== */
@@ -231,20 +291,11 @@ nav h2{
     box-shadow:0 12px 28px rgba(0,0,0,0.18);
 }
 
-.farmer{
-    background:linear-gradient(135deg, #2e7d32, #43a047);
-}
-
-.flower{
-    background:linear-gradient(135deg, #c2185b, #e91e8c);
-}
+.farmer{ background:linear-gradient(135deg, #2e7d32, #43a047); }
+.flower{ background:linear-gradient(135deg, #c2185b, #e91e8c); }
 
 /* ===== CROP CARDS ===== */
-.crops{
-    text-align:center;
-    margin-top:60px;
-}
-
+.crops{ text-align:center; margin-top:60px; }
 .crop-container{
     display:flex;
     justify-content:center;
@@ -274,11 +325,7 @@ nav h2{
 }
 
 /* ===== FLOWER CARDS ===== */
-.flowers{
-    text-align:center;
-    margin-top:60px;
-}
-
+.flowers{ text-align:center; margin-top:60px; }
 .flower-container{
     display:flex;
     justify-content:center;
@@ -306,32 +353,20 @@ nav h2{
 }
 
 /* ===== WEATHER ===== */
-.weather{
-    text-align:center;
-    margin-top:60px;
-}
-
+.weather{ text-align:center; margin-top:60px; }
 .weather-card{
     background:#ffffff;
     width:340px;
-    margin:auto;
+    margin:20px auto 0;
     padding:28px;
     border-radius:18px;
     box-shadow:0 4px 16px rgba(46,125,50,0.1);
     border:2px solid #e8f5e9;
-    margin-top:20px;
 }
 
 /* ===== SECTIONS ===== */
-section{
-    margin-top:70px;
-    padding:0 12px;
-}
-
-section h2{
-    font-size:28px;
-    margin-bottom:20px;
-}
+section{ margin-top:70px; padding:0 12px; }
+section h2{ font-size:26px; margin-bottom:20px; }
 
 /* ===== INFO BOX ===== */
 .info-box{
@@ -346,7 +381,6 @@ section h2{
 
 /* ===== TIPS ===== */
 .tips-section{ margin-top:70px; }
-
 .tips-container{
     display:flex;
     justify-content:center;
@@ -355,48 +389,37 @@ section h2{
     margin-top:20px;
 }
 
-/* ===== TRUST BADGES ===== */
+/* ===== BADGES ===== */
 .trust-badges{
     display:flex;
     justify-content:center;
-    gap:16px;
-    margin-top:24px;
+    gap:12px;
+    margin-top:20px;
     flex-wrap:wrap;
 }
 
 .hero-stats{
     display:flex;
     justify-content:center;
-    gap:16px;
+    gap:12px;
     flex-wrap:wrap;
-    margin-top:16px;
+    margin-top:12px;
 }
 
 .badge{
-    background:rgba(255,255,255,0.18);
+    background:rgba(255,255,255,0.15);
     color:#ffffff;
-    padding:10px 18px;
+    padding:8px 16px;
     border-radius:50px;
     font-weight:600;
-    font-size:14px;
+    font-size:13px;
     backdrop-filter:blur(4px);
     border:1px solid rgba(255,255,255,0.3);
 }
 
 /* ===== IMAGES ===== */
-.crop-image{
-    width:600px;
-    border-radius:18px;
-    margin-bottom:20px;
-    max-width:100%;
-}
-
-.flower-image{
-    height:300px;
-    object-fit:cover;
-    border-radius:18px;
-    max-width:100%;
-}
+.crop-image{ width:600px; border-radius:18px; margin-bottom:20px; max-width:100%; }
+.flower-image{ height:300px; object-fit:cover; border-radius:18px; max-width:100%; }
 
 /* ===== FOOTER ===== */
 footer{
@@ -405,30 +428,10 @@ footer{
     padding:40px 20px;
     margin-top:80px;
 }
-
-footer h3{
-    color:#ffffff;
-    font-size:22px;
-    margin-bottom:10px;
-}
-
-footer p{
-    color:#c8e6c9;
-    font-size:15px;
-    margin:6px 0;
-}
-
-footer a{
-    color:#ffd54f;
-    text-decoration:none;
-    font-weight:600;
-    transition:color 0.2s;
-}
-
-footer a:hover{
-    color:#ffffff;
-    text-decoration:underline;
-}
+footer h3{ color:#ffffff; font-size:22px; margin-bottom:10px; }
+footer p{ color:#c8e6c9; font-size:15px; margin:6px 0; }
+footer a{ color:#ffd54f; text-decoration:none; font-weight:600; }
+footer a:hover{ color:#ffffff; text-decoration:underline; }
 
 /* ===== CALCULATOR BOX ===== */
 .calculator-box{
@@ -440,15 +443,8 @@ footer a:hover{
     box-shadow:0 4px 20px rgba(46,125,50,0.12);
     border:2px solid #e8f5e9;
 }
-
-.calculator-box h1{
-    font-size:32px;
-    margin-bottom:20px;
-}
-
-.calculator-box button{
-    min-width:200px;
-}
+.calculator-box h1{ font-size:32px; margin-bottom:20px; }
+.calculator-box button{ min-width:200px; }
 
 /* ===== RESULT COLORS ===== */
 #result{ color:#2e7d32; font-size:24px; font-weight:700; }
@@ -466,25 +462,12 @@ textarea{
     font-family:'Poppins', sans-serif;
     width:300px;
 }
+textarea:focus{ outline:none; border-color:#e91e8c; }
 
-textarea:focus{
-    outline:none;
-    border-color:#e91e8c;
-}
-
-/* ===== BUTTONS SPECIAL ===== */
-#langBtn{
-    background:linear-gradient(135deg, #ff6f00, #ffa000);
-}
-
-#langBtn:hover{
-    background:linear-gradient(135deg, #e65100, #ff6f00);
-}
-
-.top-btn{
-    margin:20px auto;
-    display:inline-block;
-}
+/* ===== SPECIAL BUTTONS ===== */
+#langBtn{ background:linear-gradient(135deg, #ff6f00, #ffa000); }
+#langBtn:hover{ background:linear-gradient(135deg, #e65100, #ff6f00); }
+.top-btn{ margin:20px auto; display:inline-block; }
 
 /* ===== SECTION MARGINS ===== */
 .featured-crop, .tips-section, .why-us, .top-crops,
@@ -498,104 +481,72 @@ textarea:focus{
 .stats-section{ margin-top:70px; }
 
 /* ===== DARK MODE ===== */
-.dark-mode{
-    background-color:#121812;
-    color:#e8f5e9;
-}
-
-.dark-mode nav{
-    background-color:#1a2a1a;
-    border-bottom:3px solid #2e7d32;
-}
-
+.dark-mode{ background-color:#121812; color:#e8f5e9; }
+.dark-mode nav{ background-color:#1a2a1a; border-bottom:3px solid #2e7d32; }
 .dark-mode nav a{ color:#c8e6c9; }
-.dark-mode nav h2,
-.dark-mode .logo{ color:#66bb6a; }
-
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode h3{ color:#66bb6a; }
-
+.dark-mode nav h2, .dark-mode .logo{ color:#66bb6a; }
+.dark-mode h1, .dark-mode h2, .dark-mode h3{ color:#66bb6a; }
 .dark-mode p{ color:#c8e6c9; }
-
 .dark-mode .info-box,
 .dark-mode .calculator-box,
-.dark-mode .weather-card{
-    background-color:#1e2e1e;
-    color:#e8f5e9;
-    border-color:#2e7d32;
-}
-
-.dark-mode .crop-card{
-    background-color:#1e2e1e;
-    color:#c8e6c9;
-    border-color:#2e7d32;
-}
-
-.dark-mode .badge{
-    background:rgba(46,125,50,0.3);
-    color:#c8e6c9;
-}
+.dark-mode .weather-card{ background-color:#1e2e1e; color:#e8f5e9; border-color:#2e7d32; }
+.dark-mode .crop-card{ background-color:#1e2e1e; color:#c8e6c9; border-color:#2e7d32; }
+.dark-mode .badge{ background:rgba(46,125,50,0.3); color:#c8e6c9; }
+.dark-mode .feature-icons-row{ background:#1e2e1e; border-color:#2e7d32; }
+.dark-mode .feature-icon{ background:#2a3a2a; border-color:#2e7d32; }
+.dark-mode .feature-icon-item p{ color:#66bb6a; }
 
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px){
 
     body{ overflow-x:hidden; }
-
-    h1{ font-size:30px; }
-    h2{ font-size:22px; }
-    p{ font-size:16px; }
+    h1{ font-size:28px; }
+    h2{ font-size:20px; }
+    p{ font-size:15px; }
 
     nav{
-        flex-wrap:nowrap;
-        overflow-x:auto;
         justify-content:flex-start;
-        gap:14px;
+        gap:12px;
         padding:10px 14px;
-        -webkit-overflow-scrolling:touch;
     }
 
-    nav a{
-        font-size:13px;
-        white-space:nowrap;
-        flex-shrink:0;
-    }
-
-    nav h2{ font-size:16px; }
+    nav a{ font-size:12px; }
+    nav h2{ font-size:14px; }
 
     #langBtn, nav button{
         flex-shrink:0;
         white-space:nowrap;
-        font-size:12px;
-        padding:8px 12px;
+        font-size:11px;
+        padding:7px 10px;
+        min-width:auto;
     }
 
-    #guestButtons,
-    #userButtons{
+    #guestButtons, #userButtons{
         flex-shrink:0;
         white-space:nowrap;
         display:flex;
-        gap:6px;
+        gap:5px;
     }
 
-    .logo{ font-size:24px; }
+    .logo{ font-size:22px; }
 
+    /* HERO MOBILE - farmer fully visible */
     .hero{
-        padding:40px 16px;
-        min-height:100vw;
+        padding:50px 16px 40px;
+        min-height:auto;
         margin:10px;
         border-radius:16px;
-        background-position:center center;
+        background-position:20% center;
         background-size:cover;
     }
 
-    .hero h1{ font-size:34px; }
-    .hero h3{ font-size:15px; }
-    .hero p{ font-size:15px; }
+    .hero h1{ font-size:30px; }
+    .hero h3{ font-size:14px; }
+    .hero p{ font-size:14px; }
 
     .hero input{
-        width:88%;
-        max-width:320px;
+        width:85%;
+        max-width:300px;
     }
 
     .search-box{
@@ -603,68 +554,59 @@ textarea:focus{
         align-items:center;
         justify-content:center;
         flex-wrap:wrap;
+        gap:6px;
     }
 
-    #searchInput{ width:85%; }
+    #searchInput{ width:70%; max-width:240px; }
 
-    .crop-container,
-    .flower-container{
+    /* HERO CARDS MOBILE */
+    .hero-cards{
+        flex-direction:row;
+        gap:10px;
+    }
+
+    .hero-card{
+        width:140px;
+        padding:14px 10px;
+    }
+
+    .hero-card-icon{ font-size:24px; }
+    .hero-card h3{ font-size:12px; }
+    .hero-card p{ font-size:10px; }
+
+    /* FEATURE ICONS MOBILE */
+    .feature-icons-row{
+        gap:10px;
+        padding:16px 10px;
+        margin:0 10px;
+    }
+
+    .feature-icon-item{ width:70px; }
+    .feature-icon{ width:50px; height:50px; font-size:22px; }
+    .feature-icon-item p{ font-size:10px; }
+
+    /* REST OF MOBILE */
+    .crop-container, .flower-container{
         flex-direction:column;
         align-items:center;
     }
 
-    .crop-card,
-    .flower-card{ width:80%; }
-
+    .crop-card, .flower-card{ width:80%; }
     .weather-card{ width:85%; }
 
-    .info-box{
-        width:92%;
-        max-width:92%;
-        padding:20px;
-    }
-
+    .info-box{ width:92%; max-width:92%; padding:20px; }
     .crop-image{ width:92%; }
 
-    .cards{
-        flex-direction:column;
-        align-items:center;
-    }
-
+    .cards{ flex-direction:column; align-items:center; }
     .card{ width:82%; }
 
-    .tips-container{
-        flex-direction:column;
-        align-items:center;
-    }
+    .tips-container{ flex-direction:column; align-items:center; }
+    .trust-badges, .hero-stats{ flex-direction:column; align-items:center; }
 
-    .trust-badges,
-    .hero-stats{
-        flex-direction:column;
-        align-items:center;
-    }
+    .calculator-box{ width:92%; max-width:92%; margin:20px auto; padding:20px; }
+    .calculator-box button{ min-width:auto; width:90%; max-width:300px; }
 
-    .calculator-box{
-        width:92%;
-        max-width:92%;
-        margin:20px auto;
-        padding:20px;
-    }
-
-    .calculator-box button{
-        min-width:auto;
-        width:90%;
-        max-width:320px;
-    }
-
-    input, textarea{
-        width:88%;
-        max-width:320px;
-    }
-
-    .calculator-box input{
-        width:88%;
-        max-width:320px;
-    }
+    input, textarea{ width:88%; max-width:300px; }
+    .calculator-box input{ width:88%; max-width:300px; }
 
 }
