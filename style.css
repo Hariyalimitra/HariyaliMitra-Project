@@ -532,12 +532,12 @@ textarea:focus{ outline:none; border-color:#e91e8c; }
 
     /* HERO MOBILE - farmer fully visible */
     .hero{
-        padding:50px 16px 40px;
+        padding:40px 16px;
         min-height:auto;
         margin:10px;
         border-radius:16px;
-        background-position:20% center;
-        background-size:cover;
+        background-position:top center;
+        background-size:150%;
     }
 
     .hero h1{ font-size:30px; }
