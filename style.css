@@ -582,12 +582,11 @@ textarea:focus{
 
     .hero{
         padding:40px 16px;
-        min-height:520px;
+        min-height:100vw;
         margin:10px;
         border-radius:16px;
-        background-position:left center;
-        justify-content:flex-end;
-        padding-bottom:60px;
+        background-position:center center;
+        background-size:cover;
     }
 
     .hero h1{ font-size:34px; }
